@@ -12,7 +12,7 @@ jobs:
           ref: dummy-data    #checkout different branch
 
       - name: Generate Directory Listings
-        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        uses: vexmane/vexmane.github.io
         with:
           FOLDER: db      #directory to generate index
 
