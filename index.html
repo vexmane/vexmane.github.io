@@ -31,6 +31,9 @@
 <body style="font-family: monospace; font-size:18px">
 <h1>vexmane's</h1>
 	<hr>
+	<h3>GPT Prompt:</h3>
+	<textarea id="gtprompt"></textarea>
+	<br>
 	<h3><a href="https://github.com/vexmane/vexmane.github.io/tree/main/db/dotfiles">.dotfiles</a></h3>
 	<br>
 	<h3>Cool links:</h3>
@@ -92,6 +95,16 @@
 			<td>random radios</td>
 		</tr>
 	</table>
+
+	<script>
+		const input = document.querySelector("#gtprompt");
+		const output = document.querySelector("#output");
+		document.querySelector("button").addEventListener('click', () => {
+			output.textContent = "Loading..."
+			fetch("https://g" + "pt.pog5.me/?jailbreak=1&prompt=" + encodeURIComponent(input.value))
+			.then(x => x.text()).then(c => output.innerHTML = c.replace(/\n/g, '<br>'))
+		})
+	</script>
 </body>
 
 
