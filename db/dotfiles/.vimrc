@@ -1,8 +1,12 @@
-" COLORSCHEMES:
 call plug#begin()
-	" catppuccin colorschemes
-	Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
+	" everforest colorscheme
+	Plug 'sainnhe/everforest'
+	let g:everforest_background = 'hard'
+	"let g:everforest_better_performance=0
+	
 call plug#end()
+" COLORSCHEMES:
 " 	256_noir
 " 	true-monochrome
 " 	zazen
@@ -18,17 +22,43 @@ call plug#end()
 " 	catppuccin_latte
 " 	catppuccin_macchiato
 " 	catppuccin_mocha
-" 	accent
-colorscheme accent
-set tabstop=4
+" 	accent (my beloved <3)
+" 	menguless (&&) menguless_light
+" 	onedark (broken)
+" 	onehalfdark (&&) onehalflight
+" 	mirage (broken)
+" 	solarized
+" 	iceberg
+colorscheme iceberg
+syntax enable
+set background=dark
+
+" use 4 spaces for tabs
+set tabstop=4 softtabstop=4 shiftwidth=4
+
+" display indentation guides
+set list listchars=tab:\ \ ┊,trail:·,extends:»,precedes:«,nbsp:×
+
+" convert spaces to tabs when reading file
+autocmd! bufreadpost * set noexpandtab | retab! 4
+
+" convert tabs to spaces before writing file
+autocmd! bufwritepre * set expandtab | retab! 4
+
+" convert spaces to tabs after writing file (to show guides again)
+autocmd! bufwritepost * set noexpandtab | retab! 4
+
+
 set relativenumber
 set incsearch
 set ruler
 set backspace=2
 set laststatus=2
 set nocompatible
-syntax on
-"set t_Co=0
+set t_Co=256
+" show new lines:
+set linebreak
+set showbreak=↪
 filetype plugin indent on
 
 " netrw
@@ -54,6 +84,11 @@ nnoremap <Leader><tab> :buffers<CR>
 " PLUGINS
 call plug#begin()
 
+	" everforest colorscheme
+	Plug 'sainnhe/everforest'
+	let g:everforest_background = 'hard'
+	"let g:everforest_better_performance=0
+	
 	" Zig lang syntax highlighting
 	Plug 'ziglang/zig.vim'
 	let g:zig_fmt_autosave=0
@@ -62,7 +97,7 @@ call plug#begin()
 	Plug 'rust-lang/rust.vim'
 
 	"vim-transparent
-	Plug 'tribela/vim-transparent'
+	"Plug 'tribela/vim-transparent'
 
 	"fzf
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -89,7 +124,7 @@ call plug#begin()
 	"vim-airline tabline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-	let g:airline_theme='base16color'
+	let g:airline_theme='everforest'
 	let g:airline_symbols = {}
 	let g:airline_symbols.maxlinenr = '_'
 
