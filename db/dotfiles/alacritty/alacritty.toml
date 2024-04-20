@@ -7,16 +7,20 @@ import = [
 # IBM Plex Mono
 # Source Code Pro
 # Ubuntu Mono
-# Monaspace Neon Var
-normal = { family = "Monaspace Neon Var", style = "Light" }
-size = 11.50 #default 11.25
+# Monaspace Neon Var (11.50 size 100 columns by 30 lines)
+# FreeMono
+# FiraCode (&&) FiraMono Nerd Font Mono
+# anonymous pro 
+# Andale Mono (13.00 size 100 columns by 28 lines; +2 zoom for optimal coding experience)
+normal = { family = "Andale Mono", style = "Light" }
+size = 13.00 #default 11.25
 
 
 [window]
 dynamic_title = true # Disable this for the title below this comment to show up
 title = "Alacritty" # Works only if 'dynamic_title' is disabled
-dimensions = { columns = 100, lines = 30 }
-opacity = 0.90 #0.85
+dimensions = { columns = 100, lines = 28 }
+opacity = 0.95 #0.85
 #decorations = "None"
 
 
