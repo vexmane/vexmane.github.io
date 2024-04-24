@@ -7,29 +7,6 @@ call plug#begin()
     
 call plug#end()
 
-" COLORSCHEMES:
-"   256_noir
-"   true-monochrome
-"   zazen
-"   acme
-"   gruvbox
-"   gruvbox8
-"   gruvbox8_hard
-"   gruvbox8_soft
-"   gotham
-"   gotham256
-"   monochrome
-"   catppuccin_frappe
-"   catppuccin_latte
-"   catppuccin_macchiato
-"   catppuccin_mocha
-"   accent (my beloved <3)
-"   menguless (&&) menguless_light
-"   onedark (broken)
-"   onehalfdark (&&) onehalflight
-"   mirage (broken)
-"   solarized
-"   iceberg
 colorscheme iceberg
 syntax enable
 set background=dark
@@ -137,9 +114,17 @@ call plug#begin()
     " Buffer Explorer
     Plug 'jlanzarotta/bufexplorer'
 
+    " Tagbar
+    Plug 'preservim/tagbar'
+
 call plug#end()
 
 "call airline#parts#define_accent('', 'italic')
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-F> :NERDTreeFind<CR>
 nnoremap <C-f> :NERDTreeFocus<CR>
+nmap <F8> :TagbarToggle<CR>
+
+" === ON STARTUP ===
+au VimEnter * NERDTree
+au VimEnter * windo 1
